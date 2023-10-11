@@ -1,1 +1,5 @@
-<%= render(HeaderComponent.new(title: "My Component Title 🥰")) %>
+<%= render(HeaderComponent.new(title: "My Component Title 🥰", body: "Body")) do %>
+İçerik
+<% end %>
+
+<%= link_to "Posts", posts_path%>
