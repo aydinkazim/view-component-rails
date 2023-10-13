@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class PostComponent < ViewComponent::Base
-  def initialize(title:, body:)
-    @title = title
-    @body = body
+  def initialize(post:)
+    @post = post
   end
-
 end
