@@ -3,6 +3,7 @@
 require 'test_helper'
 
 class PostComponentTest < ViewComponent::TestCase
+  include ViewComponent::RenderPreviewHelper
   def test_component_renders_something_useful
     post = posts(:applecart)
     render_inline(PostComponent.new(post:))
@@ -22,5 +23,11 @@ class PostComponentTest < ViewComponent::TestCase
       expected
     end
     assert_text(expected)
+  end
+
+  def test_render_preview
+    render_preview(:with_default_title)
+
+    assert_text('Default Title')
   end
 end
